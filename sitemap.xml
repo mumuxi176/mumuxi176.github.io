@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mumuxi176.github.io/photos/association/index.html</loc>
+    
+    <lastmod>2022-07-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mumuxi176.github.io/history/index.html</loc>
     
     <lastmod>2022-07-30</lastmod>
@@ -57,15 +66,6 @@
   
   <url>
     <loc>https://mumuxi176.github.io/girls/lyx/index.html</loc>
-    
-    <lastmod>2022-07-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mumuxi176.github.io/photos/association/index.html</loc>
     
     <lastmod>2022-07-30</lastmod>
     
@@ -148,7 +148,7 @@
 
   <url>
     <loc>https://mumuxi176.github.io/</loc>
-    <lastmod>2022-07-30</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -156,28 +156,28 @@
   
   <url>
     <loc>https://mumuxi176.github.io/tags/github/</loc>
-    <lastmod>2022-07-30</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://mumuxi176.github.io/tags/test/</loc>
-    <lastmod>2022-07-30</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://mumuxi176.github.io/tags/blog/</loc>
-    <lastmod>2022-07-30</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://mumuxi176.github.io/tags/comment/</loc>
-    <lastmod>2022-07-30</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -186,21 +186,21 @@
   
   <url>
     <loc>https://mumuxi176.github.io/categories/github/</loc>
-    <lastmod>2022-07-30</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://mumuxi176.github.io/categories/test/</loc>
-    <lastmod>2022-07-30</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://mumuxi176.github.io/categories/blog/</loc>
-    <lastmod>2022-07-30</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

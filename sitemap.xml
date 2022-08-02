@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mumuxi176.github.io/articles/0.html</loc>
+    
+    <lastmod>2022-08-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mumuxi176.github.io/girls/index.html</loc>
     
     <lastmod>2022-08-02</lastmod>
@@ -146,14 +155,14 @@
 
   
   <url>
-    <loc>https://mumuxi176.github.io/tags/test/</loc>
+    <loc>https://mumuxi176.github.io/tags/github/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mumuxi176.github.io/tags/github/</loc>
+    <loc>https://mumuxi176.github.io/tags/test/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -176,14 +185,14 @@
 
   
   <url>
-    <loc>https://mumuxi176.github.io/categories/test/</loc>
+    <loc>https://mumuxi176.github.io/categories/github/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mumuxi176.github.io/categories/github/</loc>
+    <loc>https://mumuxi176.github.io/categories/test/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

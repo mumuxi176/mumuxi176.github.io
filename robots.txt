@@ -1,0 +1,6 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://mumuxi176.github.io/sitemap.xml
+Sitemap: https://mumuxi176.github.io/baidusitemap.xml

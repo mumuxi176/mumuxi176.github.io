@@ -1,0 +1,336 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>博客评论系统 | 木木夕Blog</title><meta name="keywords" content="blog,comment"><meta name="author" content="mumuxi176"><meta name="copyright" content="mumuxi176"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="如何制作个人博客的Twikoo评论系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客评论系统">
+<meta property="og:url" content="https://mumuxi176.github.io/articles/c14768a1.html">
+<meta property="og:site_name" content="木木夕Blog">
+<meta property="og:description" content="如何制作个人博客的Twikoo评论系统">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/006ngffrgy1h4qdv7nl9qj31jk0zpk01.jpg">
+<meta property="article:published_time" content="2022-07-29T08:51:06.675Z">
+<meta property="article:modified_time" content="2022-08-02T11:42:54.054Z">
+<meta property="article:author" content="mumuxi176">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="comment">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://tva1.sinaimg.cn/large/006ngffrgy1h4qdv7nl9qj31jk0zpk01.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://mumuxi176.github.io/articles/c14768a1"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="Zn5dC838gUqjVrKwRNTkWTJ6493Qe7a4igenvFDESTg"/><meta name="baidu-site-verification" content="code-ddADrQn6fy"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":90,"position":"top","messagePrev":"该文章创建于","messageNext":"天前，内容不新可能会导致些许问题发生，请谅解。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: mumuxi176","link":"链接: ","source":"来源: 木木夕Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '博客评论系统',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-02 19:42:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/style.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/%E5%A4%B4%E5%83%8F.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/history/"><i class="fa-fw fas fa-heart"></i><span> 时光</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('http://tva1.sinaimg.cn/large/006ngffrgy1h4qdv7nl9qj31jk0zpk01.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">木木夕Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/history/"><i class="fa-fw fas fa-heart"></i><span> 时光</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">博客评论系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-29T08:51:06.675Z" title="发表于 2022-07-29 16:51:06">2022-07-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-02T11:42:54.054Z" title="更新于 2022-08-02 19:42:54">2022-08-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/blog/">blog</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="博客评论系统"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/articles/c14768a1.html#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><img src="https://i0.hdslb.com/bfs/album/0e4cc9126d7f473607c50a3f6af4fac2bb421885.png" alt="image-20220718124258934"></p>
+<h1 id="Twikoo评论系统-Vercel部署"><a href="#Twikoo评论系统-Vercel部署" class="headerlink" title="Twikoo评论系统+Vercel部署"></a>Twikoo评论系统+Vercel部署</h1><p>
+        <img src="https://img.shields.io/badge/Typora-v0.11.18-green?style=for-the-badge">
+    <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/mumuxi176"><img src="https://img.shields.io/badge/%E4%BD%9C%E8%80%85-mumuxi176-blue?style=for-the-badge&logo=github"></a>
+</p>
+
+<p>👉 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://twikoo.js.org/quick-start.html#vercel-%E9%83%A8%E7%BD%B2">Twikoo文档</a></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用hexo+butterfly构建个人博客的时候，想有一个评论系统，在butterfly官方文档中的评论系统，一开始想要waline，可是leancloud我一直无法创建应用，后面使用了来必力，可是来必力评论的话需要社交账号登录，就挺麻烦的，然后就到网上找了找有没有好点的评论系统。一开始部署twikoo的时候，找到的教程所进行的步骤有些和我不一样，可能是官网更新导致的，自己也弄了很久，后面终于搞好了，写个部署笔记记录一下，免得以后忘了</p>
+<h2 id="申请MongoDB账号"><a href="#申请MongoDB账号" class="headerlink" title="申请MongoDB账号"></a>申请MongoDB账号</h2><p>👉 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.mongodb.com/cloud/atlas/register">账号注册页</a></p>
+<blockquote>
+<p>带<code>*</code>的必填，<code>company</code>公司选填</p>
+</blockquote>
+<h2 id="创建MongoDB数据库"><a href="#创建MongoDB数据库" class="headerlink" title="创建MongoDB数据库"></a>创建MongoDB数据库</h2><ol>
+<li>选择<code>Free</code>免费的<code>Share Clusters</code>，点击Create  a cluster 开始创建</li>
+<li>选择<code>AWS</code>，地区<code>us-east-1</code>，点击Create cluster 创建</li>
+</ol>
+<h2 id="配置数据库"><a href="#配置数据库" class="headerlink" title="配置数据库"></a>配置数据库</h2><ol>
+<li><p><img src="https://tva1.sinaimg.cn/large/006ngffrgy1h4qhtrqdnpj31v40q7qeh.jpg" alt="image-20220729161131265.png"></p>
+<p>点击<code>connect</code></p>
+</li>
+<li><p>设置允许所有IP地址的连接，选择<code>Allow Access from Anywhere</code>，点击<code>Add IP Address</code></p>
+</li>
+<li><p>创建数据库用户，填入用户名和密码，点击<code>Create Database User</code></p>
+</li>
+<li><p>连接安全性有三种，选择中间的<code>Connect your application</code></p>
+</li>
+<li><p>连接方式默认即可，记录数据库连接字符串，将连接字符串中的<code>&lt;password&gt;</code>替换成第3步设定的密码</p>
+<blockquote>
+<p>mongodb+srv:&#x2F;&#x2F;mumuxi176:<a href="mailto:&#x4d;&#x79;&#x6c;&#111;&#118;&#x65;&#x69;&#x73;&#x73;&#x6f;&#x6e;&#103;&#x32;&#55;&#55;&#83;&#x40;&#99;&#108;&#x75;&#115;&#x74;&#x65;&#114;&#48;&#x2e;&#x33;&#x6a;&#x6b;&#x6c;&#112;&#x2e;&#109;&#111;&#x6e;&#x67;&#x6f;&#x64;&#98;&#x2e;&#110;&#x65;&#116;" rel="external nofollow noreferrer">&#x4d;&#x79;&#x6c;&#111;&#118;&#x65;&#x69;&#x73;&#x73;&#x6f;&#x6e;&#103;&#x32;&#55;&#55;&#83;&#x40;&#99;&#108;&#x75;&#115;&#x74;&#x65;&#114;&#48;&#x2e;&#x33;&#x6a;&#x6b;&#x6c;&#112;&#x2e;&#109;&#111;&#x6e;&#x67;&#x6f;&#x64;&#98;&#x2e;&#110;&#x65;&#116;</a>&#x2F;?retryWrites&#x3D;true&amp;w&#x3D;majority</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="Vercel部署和配置"><a href="#Vercel部署和配置" class="headerlink" title="Vercel部署和配置"></a>Vercel部署和配置</h2><p>👉 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://vercel.com/signup">Vercel账号申请</a></p>
+<ol>
+<li>选择<code>Continue with Email</code>用邮箱来注册</li>
+<li>点击👉<font title="blue"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://vercel.com/new/clone?repository-url=https://github.com/imaegoo/twikoo/tree/main/src/vercel-min">Deploy</a></font></li>
+<li>填入新建的仓库名字，点击<code>Create</code>创建，等待部署成功（页面出现彩带即为成功）</li>
+<li>点击<code>Open Dashboard</code>，选择上方的<code>Settings</code>，点击<code>Environment Variables</code>，添加环境变量<code>NAME</code>名为<code>MONGODB_URI</code>，其<code>VALUE</code>值为<a href="#%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93">配置数据库第5步</a>的连接字符串（记得替换上数据库密码），点击<code>Add</code></li>
+<li>选择上方的<code>Deployments</code>，点击项目的三个点设置，选择<code>Redeploy</code>重新部署</li>
+<li>等待部署，出现<code>云函数运行正常</code>即为成功</li>
+<li>选择上方的<code>Overview</code>，点击<code>Domains</code>下方的链接，如果配置正确，可以看到<code>Twikoo 云函数运行正常</code>的提示</li>
+<li>刚刚的链接<code>https://xxx.vercel.app</code> 即 envId</li>
+</ol>
+<h2 id="hexo-butterfly评论系统配置"><a href="#hexo-butterfly评论系统配置" class="headerlink" title="hexo-butterfly评论系统配置"></a>hexo-butterfly评论系统配置</h2><ol>
+<li><p>在<code>_config.butterfly.yml</code>中配置，更改use的值</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Up to two comments system, the first will be shown as default</span></span><br><span class="line">  <span class="comment"># Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42</span></span><br><span class="line">  <span class="attr">use:</span> <span class="string">Twikoo</span></span><br><span class="line">  <span class="attr">text:</span> <span class="literal">true</span> <span class="comment"># Display the comment name next to the button</span></span><br><span class="line">  <span class="comment"># lazyload: The comment system will be load when comment element enters the browser&#x27;s viewport.</span></span><br><span class="line">  <span class="comment"># If you set it to true, the comment count will be invalid</span></span><br><span class="line">  <span class="attr">lazyload:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">count:</span> <span class="literal">true</span> <span class="comment"># Display comment count in post&#x27;s top_img</span></span><br><span class="line">  <span class="attr">card_post_count:</span> <span class="literal">false</span> <span class="comment"># Display comment count in Home Page</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将获取到的envId填入</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">twikoo:</span></span><br><span class="line">  <span class="attr">envId:</span> <span class="string">https://blog2-mumuxi176.vercel.app/</span></span><br><span class="line">  <span class="attr">region:</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://mumuxi176.github.io">mumuxi176</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://mumuxi176.github.io/articles/c14768a1.html">https://mumuxi176.github.io/articles/c14768a1.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://mumuxi176.github.io" target="_blank">木木夕Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/blog/">blog</a><a class="post-meta__tags" href="/tags/comment/">comment</a></div><div class="post_share"><div class="social-share" data-image="http://tva1.sinaimg.cn/large/006ngffrgy1h4qdv7nl9qj31jk0zpk01.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/articles/8c53df1c.html"><img class="next-cover" src="http://tva1.sinaimg.cn/large/006ngffrgy1h4qdvmpi24j34mo3c9qve.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">github个人主页</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/%E5%A4%B4%E5%83%8F.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">mumuxi176</div><div class="author-info__description">梦碎乄木木夕</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/mumuxi176"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/mumuxi176" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/1768464372@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">个人博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F-Vercel%E9%83%A8%E7%BD%B2"><span class="toc-number">1.</span> <span class="toc-text">Twikoo评论系统+Vercel部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B3%E8%AF%B7MongoDB%E8%B4%A6%E5%8F%B7"><span class="toc-number">1.2.</span> <span class="toc-text">申请MongoDB账号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAMongoDB%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text">创建MongoDB数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.4.</span> <span class="toc-text">配置数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vercel%E9%83%A8%E7%BD%B2%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.5.</span> <span class="toc-text">Vercel部署和配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-butterfly%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE"><span class="toc-number">1.6.</span> <span class="toc-text">hexo-butterfly评论系统配置</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/articles/c14768a1.html" title="博客评论系统"><img src="http://tva1.sinaimg.cn/large/006ngffrgy1h4qdv7nl9qj31jk0zpk01.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客评论系统"/></a><div class="content"><a class="title" href="/articles/c14768a1.html" title="博客评论系统">博客评论系统</a><time datetime="2022-07-29T08:51:06.675Z" title="发表于 2022-07-29 16:51:06">2022-07-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/articles/8c53df1c.html" title="github个人主页"><img src="http://tva1.sinaimg.cn/large/006ngffrgy1h4qdvmpi24j34mo3c9qve.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="github个人主页"/></a><div class="content"><a class="title" href="/articles/8c53df1c.html" title="github个人主页">github个人主页</a><time datetime="2022-07-26T08:35:28.197Z" title="发表于 2022-07-26 16:35:28">2022-07-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/articles/4a17b156.html" title="Hello World"><img src="https://tva1.sinaimg.cn/large/006ngffrgy1h4qgfvf18jj30zk0qijse.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/articles/4a17b156.html" title="Hello World">Hello World</a><time datetime="2022-07-18T04:50:32.214Z" title="发表于 2022-07-18 12:50:32">2022-07-18</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('http://tva1.sinaimg.cn/large/006ngffrgy1h4qdv7nl9qj31jk0zpk01.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 By mumuxi176</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">感谢浏览😄</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://blog2-mumuxi176.vercel.app/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://blog2-mumuxi176.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="7567722549" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.5" zIndex="-1" count="199" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,友善,爱国,敬业,诚信" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
